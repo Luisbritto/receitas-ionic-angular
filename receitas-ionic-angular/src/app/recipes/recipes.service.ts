@@ -16,7 +16,7 @@ export class RecipesService {
       id: 'r2',
       title: 'Hamburguer',
       imageUrl: '',
-      ingredients: ['Bread','Bacon','Cheddar,Hamburguer Meat']
+      ingredients: ['Bread','Bacon','Cheddar','Hamburguer Meat']
     }
   ];
 
@@ -32,6 +32,12 @@ export class RecipesService {
       return recipe.id === recipeId;
     })
     };
+  }
+
+  deleteRecipe(recipeId: string){
+    this.recipes = this.recipes.filter(recipe => {
+      return recipe.id !== recipeId;
+    });
   }
 
 }
